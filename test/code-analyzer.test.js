@@ -1132,6 +1132,47 @@ describe('Complex Array', () => {
     restart();
 
   });
+  it('Complex Array_2', () => {
+    var toCompare = {
+      "type": "Program",
+      "body": [
+        {
+          "type": "ExpressionStatement",
+          "expression": {
+            "type": "AssignmentExpression",
+            "operator": "=",
+            "left": {
+              "type": "MemberExpression",
+              "computed": true,
+              "object": {
+                "type": "Identifier",
+                "name": "arr"
+              },
+              "property": {
+                "type": "Literal",
+                "value": 2,
+                "raw": "2"
+              }
+            },
+            "right": {
+              "type": "Literal",
+              "value": 7,
+              "raw": "7"
+            }
+          }
+        }
+      ],
+      "sourceType": "script"
+    }
+    parseBody(toCompare.body);
+    var test = getAns();
+    assert.equal(
+      test[0].value,
+      '7'
+    );
+    restart();
+
+  });
 
 });
 

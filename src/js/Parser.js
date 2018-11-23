@@ -101,7 +101,7 @@ function ExpressionStatementHandler(object) {
 
     };
 
-    obj.name = express.left.name;
+    obj.name = ExpParser(express.left) + '';
     obj.value = ExpParser(express.right) + '';
     if (obj.value.startsWith('(')) {
         obj.value = obj.value.substring(1, obj.value.length - 1);
